@@ -349,7 +349,8 @@ body::after {
   background-color: #fff8e6;
   width: 100%;
   max-width: 800px;
-  border-radius: 8px
+  border-radius: 8px;
+  padding-top: 2.875rem
 }
 .lock .popup__content {
   visibility: visible
@@ -2073,9 +2074,6 @@ button.swiper-pagination-bullet {
 }
 @media (min-width:73.75em) {
   .popup__content {
-    padding-top: 2.875rem
-  }
-  .popup__content {
     padding-bottom: 4.125rem
   }
   .popup__content {
@@ -2403,9 +2401,6 @@ button.swiper-pagination-bullet {
   }
 }
 @media (max-width:20em) {
-  .popup__content {
-    padding-top: 1.25rem
-  }
   .popup__content {
     padding-bottom: 1.875rem
   }
@@ -2965,9 +2960,6 @@ button.swiper-pagination-bullet {
   }
 }
 @media (min-width:20em)and (max-width:73.75em) {
-  .popup__content {
-    padding-top: clamp(1.25rem ,.6453488372rem + 3.023255814vw ,2.875rem)
-  }
   .popup__content {
     padding-bottom: clamp(1.875rem ,1.0377906977rem + 4.1860465116vw ,4.125rem)
   }
