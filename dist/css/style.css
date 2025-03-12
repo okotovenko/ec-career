@@ -424,7 +424,8 @@ body::after {
   line-height: 110%;
   position: relative;
   list-style: none;
-  padding-right: 2.8125rem
+  padding-right: 2.8125rem;
+  transition: all .3s ease 0s
 }
 .spollers__title::-webkit-details-marker,
 .spollers__title::marker {
@@ -450,12 +451,17 @@ body::after {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg)
 }
+._spoller-init .spollers__title._spoller-active {
+  background: rgba(0,0,0,0);
+  color: #000
+}
+._spoller-init .spollers__title._spoller-active::before {
+  background-color: #000
+}
 ._spoller-init .spollers__title._spoller-active::after {
   -webkit-transform: rotate(0);
-  transform: rotate(0)
-}
-.spollers__body ul {
-  margin-left: 1.25rem
+  transform: rotate(0);
+  background-color: #000
 }
 .spollers__body ul li {
   list-style-type: disc
@@ -528,14 +534,16 @@ body::after {
   display: none
 }
 .blog-page {
-  background-color: #fff
+  background-color: #fff;
+  display: flex;
+  flex-direction: column
 }
 .article-page {
   background-color: #fff
 }
 .article-page [class*=__container-small] {
   width: 100%;
-  max-width: 50rem
+  max-width: 48.125rem
 }
 .category-page {
   background-color: #fff
@@ -548,6 +556,7 @@ body::after {
   transition: all .3s ease 0s
 }
 .button--border {
+  font-weight: 700;
   background-color: rgba(0,0,0,0);
   border: 2px solid #000
 }
@@ -680,8 +689,10 @@ body::after {
   line-height: 98%
 }
 .hero__text {
+  line-height: 120%;
   bottom: 1.25rem;
-  margin-bottom: 3.25rem
+  margin-bottom: 3.25rem;
+  font-size: 1rem
 }
 .hero__buttons {
   width: 100%;
@@ -701,7 +712,7 @@ body::after {
 .hero__button {
   background-color: #000;
   border: 2px solid transparent;
-  color: #fff;
+  color: #fff8e6;
   transition: all .3s ease 0s
 }
 .hero__right {
@@ -718,14 +729,14 @@ body::after {
   width: 100%;
   -o-object-fit: contain;
   object-fit: contain;
-  aspect-ratio: 390/754
+  aspect-ratio: 312/605
 }
 .hero__img picture img,
 .hero__img picture source {
   width: 100%;
   -o-object-fit: contain;
   object-fit: contain;
-  aspect-ratio: 390/754
+  aspect-ratio: 312/605
 }
 .about__container {
   display: flex;
@@ -787,7 +798,7 @@ body::after {
   border-bottom: 1px solid #000
 }
 .structure__spollers .spollers__body {
-  line-height: 157%
+  line-height: 120%
 }
 .structure__button {
   font-size: 1.25rem;
@@ -800,7 +811,7 @@ body::after {
 }
 .instructors__slide--left {
   width: 100%;
-  max-width: 30.5625rem
+  max-width: 24.375rem
 }
 .instructors__slide--img {
   border-radius: 2.625rem;
@@ -808,12 +819,12 @@ body::after {
 }
 .instructors__slide--img>img,
 .instructors__slide--img>picture {
-  aspect-ratio: 489/528;
+  aspect-ratio: 390/422;
   width: 100%
 }
 .instructors__slide--img picture img,
 .instructors__slide--img picture source {
-  aspect-ratio: 489/528;
+  aspect-ratio: 390/422;
   width: 100%
 }
 .instructors__slide--right {
@@ -832,6 +843,9 @@ body::after {
 .instructors__slide--right a {
   text-decoration: underline;
   transition: all .3s ease 0s
+}
+.instructors__slide--text {
+  line-height: 120%
 }
 .instructors__slide--text p:not(:last-child) {
   margin-bottom: 1.25rem
@@ -852,7 +866,7 @@ body::after {
   border-bottom: 1px solid #000
 }
 .faq__spollers .spollers__body {
-  line-height: 157%
+  line-height: 120%
 }
 .faq__button {
   font-size: 1.25rem;
@@ -873,14 +887,14 @@ body::after {
   -moz-column-gap: .9375rem;
   column-gap: .9375rem;
   row-gap: 2.8125rem;
-  font-size: 1rem;
   line-height: 130%
 }
 .results__item h6 {
   font-weight: 700
 }
 .results__num {
-  padding-top: .3125rem
+  padding-top: .3125rem;
+  line-height: 80%
 }
 .reviews__slider {
   overflow: visible!important
@@ -898,7 +912,6 @@ body::after {
 }
 .reviews__slide--text {
   flex: 1 1 auto;
-  font-size: 1rem;
   line-height: 130%
 }
 .reviews__slide--text._showmore-active .block__more--show {
@@ -981,7 +994,8 @@ body::after {
   transition: all .3s ease 0s
 }
 .price__center p {
-  margin-top: 1.0625rem
+  margin-top: 1.0625rem;
+  line-height: 120%
 }
 .price__items {
   display: grid;
@@ -1101,10 +1115,11 @@ body::after {
   font-weight: 600;
   font-size: 1rem
 }
-.about-blog-page__left h2 {
+.about-blog-page__left a {
   font-weight: 800;
   line-height: 98%;
-  margin-bottom: 1.5rem
+  margin-bottom: 1.5rem;
+  transition: all .3s ease 0s
 }
 .about-blog-page__left p {
   font-size: 1rem;
@@ -1120,37 +1135,22 @@ body::after {
 .about-blog-page__right {
   width: 100%;
   border-radius: 2.1875rem;
-  background-color: #fcf6e7;
-  display: flex;
-  justify-content: flex-end;
-  gap: 1.875rem
-}
-.about-blog-page__right h1 {
-  width: 100%;
-  max-width: 15.4375rem;
-  font-weight: 800;
-  line-height: 98%
-}
-.about-blog-page__right h1 span {
-  display: block
+  overflow: hidden
 }
 .about-blog-page__img {
-  width: 100%;
-  max-width: 19.875rem
+  width: 100%
 }
 .about-blog-page__img>img,
 .about-blog-page__img>picture {
-  min-width: 17.5rem;
   width: 100%;
-  aspect-ratio: 318/355;
+  aspect-ratio: 683/377;
   -o-object-fit: contain;
   object-fit: contain
 }
 .about-blog-page__img picture img,
 .about-blog-page__img picture source {
-  min-width: 17.5rem;
   width: 100%;
-  aspect-ratio: 318/355;
+  aspect-ratio: 683/377;
   -o-object-fit: contain;
   object-fit: contain
 }
@@ -1259,7 +1259,7 @@ body::after {
   line-height: 120%
 }
 .article-article-page__container-small p:not(:last-child) {
-  margin-bottom: 1.5625rem
+  margin-bottom: 1.875rem
 }
 .article-article-page__container-small ul li {
   position: relative;
@@ -1405,7 +1405,7 @@ body::after {
   margin-bottom: 1.25rem
 }
 .items-category-page__left p {
-  font-size: 1rem;
+  line-height: 120%;
   margin-bottom: 2.5rem
 }
 .items-category-page__left a {
@@ -1420,6 +1420,7 @@ body::after {
 }
 .items-category-page__right>img,
 .items-category-page__right>picture {
+  height: 100%;
   width: 100%;
   -o-object-fit: cover;
   object-fit: cover;
@@ -1427,6 +1428,7 @@ body::after {
 }
 .items-category-page__right picture img,
 .items-category-page__right picture source {
+  height: 100%;
   width: 100%;
   -o-object-fit: cover;
   object-fit: cover;
@@ -2095,10 +2097,13 @@ button.swiper-pagination-bullet {
     padding-bottom: 2.8125rem
   }
   .spollers__title {
-    font-size: 1.875rem
+    font-size: 1.75rem
   }
   .spollers__body {
     padding-bottom: 2.8125rem
+  }
+  .spollers__body {
+    padding-left: 2.5rem
   }
   .top h3 {
     font-size: 1.875rem
@@ -2130,9 +2135,6 @@ button.swiper-pagination-bullet {
   .hero__left h1 {
     margin-bottom: 1.875rem
   }
-  .hero__text {
-    font-size: 1rem
-  }
   .hero__buttons {
     font-size: 1.125rem
   }
@@ -2145,7 +2147,7 @@ button.swiper-pagination-bullet {
     padding-bottom: .9375rem
   }
   .hero__img {
-    max-width: 24.375rem
+    max-width: 19.5rem
   }
   .about {
     padding-top: 3.75rem
@@ -2201,7 +2203,7 @@ button.swiper-pagination-bullet {
     padding-bottom: 16.875rem
   }
   .structure__top {
-    margin-bottom: 2.3125rem
+    margin-bottom: 3.5625rem
   }
   .structure__text {
     font-size: 1.125rem
@@ -2231,10 +2233,10 @@ button.swiper-pagination-bullet {
     font-size: 1.25rem
   }
   .instructors__slide--right a {
-    font-size: 1.5rem
+    font-size: 1rem
   }
   .instructors__slide--text {
-    font-size: 1.125rem
+    font-size: 1rem
   }
   .instructors__slide--text {
     margin-bottom: 3.125rem
@@ -2257,8 +2259,11 @@ button.swiper-pagination-bullet {
   .results__top {
     margin-bottom: 5.625rem
   }
-  .results__num ::before {
-    font-size: 7.5rem
+  .results__item p {
+    font-size: 1rem
+  }
+  .results__num {
+    font-size: 9.375rem
   }
   .reviews {
     padding-bottom: 14.375rem
@@ -2281,17 +2286,23 @@ button.swiper-pagination-bullet {
   .reviews__slide {
     padding-right: 3.125rem
   }
+  .reviews__slide--text {
+    font-size: 1rem
+  }
   .reviews__slide--avatar {
     width: 5.75rem
   }
   .price {
-    padding-bottom: 22.75rem
+    padding-bottom: 11.375rem
   }
   .price__top {
     margin-bottom: 5.4375rem
   }
   .price__center {
     margin-bottom: 6.875rem
+  }
+  .price__center p {
+    font-size: 1rem
   }
   .price__item {
     padding-left: 1.875rem
@@ -2300,10 +2311,7 @@ button.swiper-pagination-bullet {
     padding-right: 1.875rem
   }
   .categories-blog-page {
-    padding-top: 5rem
-  }
-  .categories-blog-page {
-    padding-bottom: 6.25rem
+    padding-bottom: 5rem
   }
   .about-blog-page {
     margin-bottom: 7.375rem
@@ -2311,17 +2319,8 @@ button.swiper-pagination-bullet {
   .about-blog-page__left span {
     margin-bottom: 1.6875rem
   }
-  .about-blog-page__left h2 {
+  .about-blog-page__left a {
     font-size: 2.4375rem
-  }
-  .about-blog-page__right {
-    padding-top: 3.0625rem
-  }
-  .about-blog-page__right {
-    padding-left: 3.0625rem
-  }
-  .about-blog-page__right h1 {
-    font-size: 4.3125rem
   }
   .articles-blog-page {
     padding-bottom: 16.0625rem
@@ -2363,6 +2362,9 @@ button.swiper-pagination-bullet {
   .items-category-page__left h2 {
     font-size: 2.4375rem
   }
+  .items-category-page__left p {
+    font-size: 1.1875rem
+  }
 }
 @media (min-width:90em) {
   .menu__list {
@@ -2390,6 +2392,9 @@ button.swiper-pagination-bullet {
     -webkit-column-gap: 6.0625rem;
     -moz-column-gap: 6.0625rem;
     column-gap: 6.0625rem
+  }
+  .categories-blog-page {
+    padding-top: 3.75rem
   }
 }
 @media (max-width:25em) {
@@ -2428,6 +2433,9 @@ button.swiper-pagination-bullet {
   .spollers__body {
     padding-bottom: 1.4375rem
   }
+  .spollers__body {
+    padding-left: 1.25rem
+  }
   .top h3 {
     font-size: 1.25rem
   }
@@ -2450,16 +2458,13 @@ button.swiper-pagination-bullet {
     padding-bottom: .9375rem
   }
   .hero__left span {
-    font-size: .875rem
+    font-size: .9375rem
   }
   .hero__left h1 {
     font-size: 2.375rem
   }
   .hero__left h1 {
     margin-bottom: 1.25rem
-  }
-  .hero__text {
-    font-size: .875rem
   }
   .hero__buttons {
     font-size: 1rem
@@ -2473,13 +2478,13 @@ button.swiper-pagination-bullet {
     padding-bottom: .75rem
   }
   .hero__img {
-    max-width: 16.8125rem
+    max-width: 13.4375rem
   }
   .about {
     padding-top: 1.875rem
   }
   .about {
-    padding-bottom: 5rem
+    padding-bottom: 7.5rem
   }
   .about__container {
     gap: 1.5625rem
@@ -2491,7 +2496,7 @@ button.swiper-pagination-bullet {
     margin-bottom: .3125rem
   }
   .about__item p {
-    font-size: .875rem
+    font-size: .9375rem
   }
   .skills {
     padding-bottom: 8.4375rem
@@ -2505,7 +2510,7 @@ button.swiper-pagination-bullet {
     column-gap: .5rem
   }
   .skills__items span {
-    font-size: .875rem
+    font-size: .9375rem
   }
   .skills__items span {
     padding-top: .375rem
@@ -2523,7 +2528,7 @@ button.swiper-pagination-bullet {
     border-radius: 1.1875rem
   }
   .skills__text p {
-    font-size: .875rem
+    font-size: .9375rem
   }
   .structure {
     padding-bottom: 6.375rem
@@ -2532,7 +2537,7 @@ button.swiper-pagination-bullet {
     margin-bottom: 1.625rem
   }
   .structure__text {
-    font-size: 1rem
+    font-size: .9375rem
   }
   .structure__text {
     margin-bottom: 3.3125rem
@@ -2541,7 +2546,7 @@ button.swiper-pagination-bullet {
     margin-bottom: 2.5rem
   }
   .structure__spollers .spollers__body {
-    font-size: 1rem
+    font-size: .9375rem
   }
   .instructors {
     padding-bottom: 8.125rem
@@ -2559,10 +2564,10 @@ button.swiper-pagination-bullet {
     font-size: .875rem
   }
   .instructors__slide--right a {
-    font-size: .875rem
+    font-size: .9375rem
   }
   .instructors__slide--text {
-    font-size: .875rem
+    font-size: .9375rem
   }
   .instructors__slide--text {
     margin-bottom: 1.25rem
@@ -2577,7 +2582,7 @@ button.swiper-pagination-bullet {
     margin-bottom: 1.875rem
   }
   .faq__spollers .spollers__body {
-    font-size: 1rem
+    font-size: .9375rem
   }
   .results {
     padding-bottom: 6.75rem
@@ -2585,8 +2590,11 @@ button.swiper-pagination-bullet {
   .results__top {
     margin-bottom: 3.3125rem
   }
-  .results__num ::before {
-    font-size: 4.375rem
+  .results__item p {
+    font-size: .9375rem
+  }
+  .results__num {
+    font-size: 5.625rem
   }
   .reviews {
     padding-bottom: 10.875rem
@@ -2609,11 +2617,14 @@ button.swiper-pagination-bullet {
   .reviews__slide {
     padding-right: 1.5rem
   }
+  .reviews__slide--text {
+    font-size: .9375rem
+  }
   .reviews__slide--avatar {
     width: 4.5rem
   }
   .price {
-    padding-bottom: 13.25rem
+    padding-bottom: 6.625rem
   }
   .price__top {
     margin-bottom: 4.75rem
@@ -2621,14 +2632,14 @@ button.swiper-pagination-bullet {
   .price__center {
     margin-bottom: 3.125rem
   }
+  .price__center p {
+    font-size: .9375rem
+  }
   .price__item {
     padding-left: 1.5625rem
   }
   .price__item {
     padding-right: 1.5625rem
-  }
-  .categories-blog-page {
-    padding-top: 2.5rem
   }
   .categories-blog-page {
     padding-bottom: 3.125rem
@@ -2639,17 +2650,8 @@ button.swiper-pagination-bullet {
   .about-blog-page__left span {
     margin-bottom: .9375rem
   }
-  .about-blog-page__left h2 {
+  .about-blog-page__left a {
     font-size: 1.5rem
-  }
-  .about-blog-page__right {
-    padding-top: 1.875rem
-  }
-  .about-blog-page__right {
-    padding-left: 1.875rem
-  }
-  .about-blog-page__right h1 {
-    font-size: 2rem
   }
   .articles-blog-page {
     padding-bottom: 6.25rem
@@ -2690,6 +2692,9 @@ button.swiper-pagination-bullet {
   }
   .items-category-page__left h2 {
     font-size: 1.5rem
+  }
+  .items-category-page__left p {
+    font-size: 1rem
   }
 }
 @media (max-width:61.99875em) {
@@ -2780,16 +2785,10 @@ button.swiper-pagination-bullet {
     align-items: center
   }
   .about-blog-page__container {
-    flex-direction: column
+    flex-direction: column-reverse
   }
   .about-blog-page__left {
     max-width: 100%
-  }
-  .about-blog-page__right h1 {
-    max-width: 100%
-  }
-  .about-blog-page__right h1 span {
-    display: inline
   }
 }
 @media (max-width:61.99875em)and (any-hover:none) {
@@ -2812,6 +2811,15 @@ button.swiper-pagination-bullet {
   }
   .form-label {
     max-width: 100%
+  }
+  .blog-page__categories {
+    order: 2
+  }
+  .blog-page__about {
+    order: 1
+  }
+  .blog-page__articles {
+    order: 3
   }
   .top {
     grid-template-columns: auto
@@ -2867,11 +2875,42 @@ button.swiper-pagination-bullet {
   .skills__bottom {
     grid-template-columns: auto
   }
+  .skills__items :nth-child(1) {
+    order: 1
+  }
+  .skills__items :nth-child(2) {
+    order: 2
+  }
+  .skills__items :nth-child(3) {
+    order: 4
+  }
+  .skills__items :nth-child(4) {
+    order: 4
+  }
+  .skills__items :nth-child(5) {
+    order: 5
+  }
+  .skills__items :nth-child(6) {
+    order: 6
+  }
+  .skills__items :nth-child(7) {
+    order: 7
+  }
+  .skills__items :nth-child(8) {
+    order: 9
+  }
+  .skills__items :nth-child(9) {
+    order: 10
+  }
+  .skills__items :nth-child(10) {
+    order: 8
+  }
   .instructors__slide {
     grid-template-columns: auto
   }
   .instructors__slide--left {
-    max-width: 100%
+    max-width: 75%;
+    justify-self: center
   }
   .instructors__slide--right h4 {
     font-size: 2.625rem;
@@ -2898,8 +2937,14 @@ button.swiper-pagination-bullet {
   .price__item {
     padding-bottom: 2.8125rem
   }
+  .categories-blog-page {
+    padding-top: 0
+  }
+  .about-blog-page {
+    padding-top: 2.5rem
+  }
   .items-category-page__item {
-    flex-direction: column
+    flex-direction: column-reverse
   }
   .items-category-page__left a {
     max-width: 100%
@@ -2914,13 +2959,6 @@ button.swiper-pagination-bullet {
   }
 }
 @media (max-width:37.5em) {
-  .about-blog-page__right {
-    flex-direction: column;
-    padding-right: 1.25rem
-  }
-  .about-blog-page__img {
-    align-self: center
-  }
   .article-article-page__item {
     flex-direction: column
   }
@@ -2929,6 +2967,11 @@ button.swiper-pagination-bullet {
   }
   .article-article-page__right a {
     margin-bottom: 1.25rem
+  }
+}
+@media (max-width:31.25em) {
+  .instructors__slide--left {
+    max-width: 100%
   }
 }
 @media (min-width:48em)and (max-width:90em) {
@@ -2958,6 +3001,9 @@ button.swiper-pagination-bullet {
     -moz-column-gap: clamp(3.125rem ,-.2321428571rem + 6.994047619vw ,6.0625rem);
     column-gap: clamp(3.125rem ,-.2321428571rem + 6.994047619vw ,6.0625rem)
   }
+  .categories-blog-page {
+    padding-top: clamp(2.5rem ,1.0714285714rem + 2.9761904762vw ,3.75rem)
+  }
 }
 @media (min-width:20em)and (max-width:73.75em) {
   .popup__content {
@@ -2982,10 +3028,13 @@ button.swiper-pagination-bullet {
     padding-bottom: clamp(1.4375rem ,.925872093rem + 2.5581395349vw ,2.8125rem)
   }
   .spollers__title {
-    font-size: clamp(1.125rem ,.8459302326rem + 1.3953488372vw ,1.875rem)
+    font-size: clamp(1.125rem ,.8924418605rem + 1.1627906977vw ,1.75rem)
   }
   .spollers__body {
     padding-bottom: clamp(1.4375rem ,.925872093rem + 2.5581395349vw ,2.8125rem)
+  }
+  .spollers__body {
+    padding-left: clamp(1.25rem ,.7848837209rem + 2.3255813953vw ,2.5rem)
   }
   .top h3 {
     font-size: clamp(1.25rem ,1.0174418605rem + 1.1627906977vw ,1.875rem)
@@ -3009,16 +3058,13 @@ button.swiper-pagination-bullet {
     padding-bottom: clamp(.9375rem ,.2398255814rem + 3.488372093vw ,2.8125rem)
   }
   .hero__left span {
-    font-size: clamp(.875rem ,.8284883721rem + .2325581395vw ,1rem)
+    font-size: clamp(.9375rem ,.914244186rem + .1162790698vw ,1rem)
   }
   .hero__left h1 {
     font-size: clamp(2.375rem ,1.863372093rem + 2.5581395349vw ,3.75rem)
   }
   .hero__left h1 {
     margin-bottom: clamp(1.25rem ,1.0174418605rem + 1.1627906977vw ,1.875rem)
-  }
-  .hero__text {
-    font-size: clamp(.875rem ,.8284883721rem + .2325581395vw ,1rem)
   }
   .hero__buttons {
     font-size: clamp(1rem ,.9534883721rem + .2325581395vw ,1.125rem)
@@ -3032,13 +3078,13 @@ button.swiper-pagination-bullet {
     padding-bottom: clamp(.75rem ,.6802325581rem + .3488372093vw ,.9375rem)
   }
   .hero__img {
-    max-width: clamp(16.8125rem ,13.9985465116rem + 14.0697674419vw ,24.375rem)
+    max-width: clamp(13.4375rem ,11.1816860465rem + 11.2790697674vw ,19.5rem)
   }
   .about {
     padding-top: clamp(1.875rem ,1.1773255814rem + 3.488372093vw ,3.75rem)
   }
   .about {
-    padding-bottom: clamp(5rem ,2.4418604651rem + 12.7906976744vw ,11.875rem)
+    padding-bottom: clamp(7.5rem ,5.8720930233rem + 8.1395348837vw ,11.875rem)
   }
   .about__container {
     gap: clamp(1.5625rem ,-.1816860465rem + 8.7209302326vw ,6.25rem)
@@ -3050,7 +3096,7 @@ button.swiper-pagination-bullet {
     margin-bottom: clamp(.3125rem ,-.2688953488rem + 2.9069767442vw ,1.875rem)
   }
   .about__item p {
-    font-size: clamp(.875rem ,.8284883721rem + .2325581395vw ,1rem)
+    font-size: clamp(.9375rem ,.914244186rem + .1162790698vw ,1rem)
   }
   .skills {
     padding-bottom: clamp(8.4375rem ,6.6933139535rem + 8.7209302326vw ,13.125rem)
@@ -3064,7 +3110,7 @@ button.swiper-pagination-bullet {
     column-gap: clamp(.5rem ,.4534883721rem + .2325581395vw ,.625rem)
   }
   .skills__items span {
-    font-size: clamp(.875rem ,.8284883721rem + .2325581395vw ,1rem)
+    font-size: clamp(.9375rem ,.914244186rem + .1162790698vw ,1rem)
   }
   .skills__items span {
     padding-top: clamp(.375rem ,.2819767442rem + .4651162791vw ,.625rem)
@@ -3082,16 +3128,16 @@ button.swiper-pagination-bullet {
     border-radius: clamp(1.1875rem ,1.1177325581rem + .3488372093vw ,1.375rem)
   }
   .skills__text p {
-    font-size: clamp(.875rem ,.8284883721rem + .2325581395vw ,1rem)
+    font-size: clamp(.9375rem ,.914244186rem + .1162790698vw ,1rem)
   }
   .structure {
     padding-bottom: clamp(6.375rem ,2.4680232558rem + 19.5348837209vw ,16.875rem)
   }
   .structure__top {
-    margin-bottom: clamp(1.625rem ,1.3691860465rem + 1.2790697674vw ,2.3125rem)
+    margin-bottom: clamp(1.625rem ,.9040697674rem + 3.6046511628vw ,3.5625rem)
   }
   .structure__text {
-    font-size: clamp(1rem ,.9534883721rem + .2325581395vw ,1.125rem)
+    font-size: clamp(.9375rem ,.8677325581rem + .3488372093vw ,1.125rem)
   }
   .structure__text {
     margin-bottom: clamp(3.3125rem ,2.0566860465rem + 6.2790697674vw ,6.6875rem)
@@ -3100,7 +3146,7 @@ button.swiper-pagination-bullet {
     margin-bottom: clamp(2.5rem ,1.9651162791rem + 2.6744186047vw ,3.9375rem)
   }
   .structure__spollers .spollers__body {
-    font-size: clamp(1rem ,.9534883721rem + .2325581395vw ,1.125rem)
+    font-size: clamp(.9375rem ,.8677325581rem + .3488372093vw ,1.125rem)
   }
   .instructors {
     padding-bottom: clamp(8.125rem ,4.8691860465rem + 16.2790697674vw ,16.875rem)
@@ -3118,10 +3164,10 @@ button.swiper-pagination-bullet {
     font-size: clamp(.875rem ,.7354651163rem + .6976744186vw ,1.25rem)
   }
   .instructors__slide--right a {
-    font-size: clamp(.875rem ,.6424418605rem + 1.1627906977vw ,1.5rem)
+    font-size: clamp(.9375rem ,.914244186rem + .1162790698vw ,1rem)
   }
   .instructors__slide--text {
-    font-size: clamp(.875rem ,.7819767442rem + .4651162791vw ,1.125rem)
+    font-size: clamp(.9375rem ,.914244186rem + .1162790698vw ,1rem)
   }
   .instructors__slide--text {
     margin-bottom: clamp(1.25rem ,.5523255814rem + 3.488372093vw ,3.125rem)
@@ -3136,7 +3182,7 @@ button.swiper-pagination-bullet {
     margin-bottom: clamp(1.875rem ,1.1075581395rem + 3.8372093023vw ,3.9375rem)
   }
   .faq__spollers .spollers__body {
-    font-size: clamp(1rem ,.9534883721rem + .2325581395vw ,1.125rem)
+    font-size: clamp(.9375rem ,.8677325581rem + .3488372093vw ,1.125rem)
   }
   .results {
     padding-bottom: clamp(6.75rem ,4.238372093rem + 12.5581395349vw ,13.5rem)
@@ -3144,8 +3190,11 @@ button.swiper-pagination-bullet {
   .results__top {
     margin-bottom: clamp(3.3125rem ,2.4520348837rem + 4.3023255814vw ,5.625rem)
   }
-  .results__num ::before {
-    font-size: clamp(4.375rem ,3.2122093023rem + 5.8139534884vw ,7.5rem)
+  .results__item p {
+    font-size: clamp(.9375rem ,.914244186rem + .1162790698vw ,1rem)
+  }
+  .results__num {
+    font-size: clamp(5.625rem ,4.2296511628rem + 6.976744186vw ,9.375rem)
   }
   .reviews {
     padding-bottom: clamp(10.875rem ,9.5726744186rem + 6.511627907vw ,14.375rem)
@@ -3168,17 +3217,23 @@ button.swiper-pagination-bullet {
   .reviews__slide {
     padding-right: clamp(1.5rem ,.8953488372rem + 3.023255814vw ,3.125rem)
   }
+  .reviews__slide--text {
+    font-size: clamp(.9375rem ,.914244186rem + .1162790698vw ,1rem)
+  }
   .reviews__slide--avatar {
     width: clamp(4.5rem ,4.0348837209rem + 2.3255813953vw ,5.75rem)
   }
   .price {
-    padding-bottom: clamp(13.25rem ,9.7151162791rem + 17.6744186047vw ,22.75rem)
+    padding-bottom: clamp(6.625rem ,4.8575581395rem + 8.8372093023vw ,11.375rem)
   }
   .price__top {
     margin-bottom: clamp(4.75rem ,4.4941860465rem + 1.2790697674vw ,5.4375rem)
   }
   .price__center {
     margin-bottom: clamp(3.125rem ,1.7296511628rem + 6.976744186vw ,6.875rem)
+  }
+  .price__center p {
+    font-size: clamp(.9375rem ,.914244186rem + .1162790698vw ,1rem)
   }
   .price__item {
     padding-left: clamp(1.5625rem ,1.4462209302rem + .5813953488vw ,1.875rem)
@@ -3187,10 +3242,7 @@ button.swiper-pagination-bullet {
     padding-right: clamp(1.5625rem ,1.4462209302rem + .5813953488vw ,1.875rem)
   }
   .categories-blog-page {
-    padding-top: clamp(2.5rem ,1.5697674419rem + 4.6511627907vw ,5rem)
-  }
-  .categories-blog-page {
-    padding-bottom: clamp(3.125rem ,1.9622093023rem + 5.8139534884vw ,6.25rem)
+    padding-bottom: clamp(3.125rem ,2.4273255814rem + 3.488372093vw ,5rem)
   }
   .about-blog-page {
     margin-bottom: clamp(4.375rem ,3.2587209302rem + 5.5813953488vw ,7.375rem)
@@ -3198,17 +3250,8 @@ button.swiper-pagination-bullet {
   .about-blog-page__left span {
     margin-bottom: clamp(.9375rem ,.6584302326rem + 1.3953488372vw ,1.6875rem)
   }
-  .about-blog-page__left h2 {
+  .about-blog-page__left a {
     font-size: clamp(1.5rem ,1.1511627907rem + 1.7441860465vw ,2.4375rem)
-  }
-  .about-blog-page__right {
-    padding-top: clamp(1.875rem ,1.4331395349rem + 2.2093023256vw ,3.0625rem)
-  }
-  .about-blog-page__right {
-    padding-left: clamp(1.875rem ,1.4331395349rem + 2.2093023256vw ,3.0625rem)
-  }
-  .about-blog-page__right h1 {
-    font-size: clamp(2rem ,1.1395348837rem + 4.3023255814vw ,4.3125rem)
   }
   .articles-blog-page {
     padding-bottom: clamp(6.25rem ,2.5988372093rem + 18.2558139535vw ,16.0625rem)
@@ -3250,6 +3293,9 @@ button.swiper-pagination-bullet {
   .items-category-page__left h2 {
     font-size: clamp(1.5rem ,1.1511627907rem + 1.7441860465vw ,2.4375rem)
   }
+  .items-category-page__left p {
+    font-size: clamp(1rem ,.9302325581rem + .3488372093vw ,1.1875rem)
+  }
 }
 @media (max-width:47.99875em)and (min-width:73.75em) {
   .hero__container {
@@ -3266,10 +3312,19 @@ button.swiper-pagination-bullet {
     width: 100%;
     transition: all .3s ease 0s
   }
+  .spollers__title:hover {
+    color: #fff;
+    background-color: #000;
+    transition: all .3s ease 0s
+  }
+  .spollers__title:hover::after,
+  .spollers__title:hover::before {
+    background-color: #fff
+  }
   .button--border:hover {
     background-color: #000;
     border: 2px solid transparent;
-    color: #fff
+    color: #fff8e6
   }
   .button--orange:hover {
     background: #e0a00a
@@ -3296,6 +3351,10 @@ button.swiper-pagination-bullet {
     color: #fff;
     background-color: #000;
     border: 2px solid transparent;
+    transition: all .3s ease 0s
+  }
+  .about-blog-page__left a:hover {
+    color: gray;
     transition: all .3s ease 0s
   }
   .articles-blog-page__article:hover :nth-child(1)>img,
