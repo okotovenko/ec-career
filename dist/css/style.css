@@ -447,21 +447,30 @@ body::after {
   transition: transform .5s ease 0s;
   transition: transform .5s ease 0s,-webkit-transform .5s ease 0s
 }
+._spoller-init .spollers__title::before {
+  transition: all .3s ease 0s
+}
 ._spoller-init .spollers__title::after {
   -webkit-transform: rotate(90deg);
-  transform: rotate(90deg)
+  transform: rotate(90deg);
+  transition: all .3s ease 0s
 }
 ._spoller-init .spollers__title._spoller-active {
   background: rgba(0,0,0,0);
-  color: #000
+  color: #000;
+  padding-left: 0
 }
 ._spoller-init .spollers__title._spoller-active::before {
-  background-color: #000
+  background-color: #000;
+  transition: all .3s ease 0s;
+  right: 10px
 }
 ._spoller-init .spollers__title._spoller-active::after {
   -webkit-transform: rotate(0);
   transform: rotate(0);
-  background-color: #000
+  background-color: #000;
+  transition: all .3s ease 0s;
+  right: 10px
 }
 .spollers__body ul li {
   list-style-type: disc
@@ -543,7 +552,7 @@ body::after {
 }
 .article-page [class*=__container-small] {
   width: 100%;
-  max-width: 48.125rem
+  max-width: 46.25rem
 }
 .category-page {
   background-color: #fff
@@ -811,19 +820,23 @@ body::after {
 }
 .instructors__slide--left {
   width: 100%;
-  max-width: 24.375rem
+  max-width: 24.375rem;
+  margin-left: 3.125rem
 }
 .instructors__slide--img {
   border-radius: 2.625rem;
-  overflow: hidden
+  overflow: hidden;
+  height: 100%
 }
 .instructors__slide--img>img,
 .instructors__slide--img>picture {
+  height: 100%;
   aspect-ratio: 390/422;
   width: 100%
 }
 .instructors__slide--img picture img,
 .instructors__slide--img picture source {
+  height: 100%;
   aspect-ratio: 390/422;
   width: 100%
 }
@@ -1104,7 +1117,10 @@ body::after {
 .about-blog-page__container {
   display: flex;
   align-items: center;
-  gap: 4.375rem
+  -webkit-column-gap: 4.375rem;
+  -moz-column-gap: 4.375rem;
+  column-gap: 4.375rem;
+  row-gap: .9375rem
 }
 .about-blog-page__left {
   width: 100%;
@@ -1160,7 +1176,7 @@ body::after {
   -webkit-column-gap: 1.875rem;
   -moz-column-gap: 1.875rem;
   column-gap: 1.875rem;
-  row-gap: 3.125rem
+  row-gap: 4.6875rem
 }
 .articles-blog-page__article span {
   display: block;
@@ -1256,7 +1272,7 @@ body::after {
 }
 .article-article-page__container-small p {
   font-size: 1rem;
-  line-height: 120%
+  line-height: 1.5rem
 }
 .article-article-page__container-small p:not(:last-child) {
   margin-bottom: 1.875rem
@@ -1388,7 +1404,10 @@ body::after {
 }
 .items-category-page__item {
   display: flex;
-  gap: 4.375rem
+  -webkit-column-gap: 4.375rem;
+  -moz-column-gap: 4.375rem;
+  column-gap: 4.375rem;
+  row-gap: .9375rem
 }
 .items-category-page__left {
   width: 100%
@@ -1433,6 +1452,9 @@ body::after {
   -o-object-fit: cover;
   object-fit: cover;
   aspect-ratio: 683/377
+}
+.items-category-page a {
+  color: #fff
 }
 .swiper {
   overflow: hidden
@@ -2091,13 +2113,13 @@ button.swiper-pagination-bullet {
     margin-bottom: 3.125rem
   }
   .spollers__title {
-    padding-top: 2.8125rem
+    padding-top: 2.5rem
   }
   .spollers__title {
-    padding-bottom: 2.8125rem
+    padding-bottom: 2.5rem
   }
   .spollers__title {
-    font-size: 1.75rem
+    font-size: 1.625rem
   }
   .spollers__body {
     padding-bottom: 2.8125rem
@@ -2126,6 +2148,9 @@ button.swiper-pagination-bullet {
   .footer {
     padding-bottom: 2.8125rem
   }
+  .hero {
+    padding-top: 1.25rem
+  }
   .hero__left span {
     font-size: 1rem
   }
@@ -2150,13 +2175,13 @@ button.swiper-pagination-bullet {
     max-width: 19.5rem
   }
   .about {
-    padding-top: 3.75rem
+    padding-top: 5rem
   }
   .about {
     padding-bottom: 11.875rem
   }
   .about__container {
-    gap: 6.25rem
+    gap: 4.375rem
   }
   .about__item h4 {
     font-size: 1.75rem
@@ -2171,7 +2196,7 @@ button.swiper-pagination-bullet {
     padding-bottom: 13.125rem
   }
   .skills__container {
-    gap: 5.4375rem
+    gap: 4.375rem
   }
   .skills__items {
     -webkit-column-gap: .625rem;
@@ -2209,7 +2234,7 @@ button.swiper-pagination-bullet {
     font-size: 1.125rem
   }
   .structure__text {
-    margin-bottom: 6.6875rem
+    margin-bottom: 4.375rem
   }
   .structure__spollers {
     margin-bottom: 3.9375rem
@@ -2221,7 +2246,7 @@ button.swiper-pagination-bullet {
     padding-bottom: 16.875rem
   }
   .instructors__top {
-    margin-bottom: 6.25rem
+    margin-bottom: 4.375rem
   }
   .instructors__slider {
     margin-bottom: 7.1875rem
@@ -2263,7 +2288,7 @@ button.swiper-pagination-bullet {
     font-size: 1rem
   }
   .results__num {
-    font-size: 9.375rem
+    font-size: 7.1875rem
   }
   .reviews {
     padding-bottom: 14.375rem
@@ -2357,7 +2382,7 @@ button.swiper-pagination-bullet {
     padding-bottom: 27.5rem
   }
   .items-category-page__items {
-    gap: 6.875rem
+    gap: 8.125rem
   }
   .items-category-page__left h2 {
     font-size: 2.4375rem
@@ -2419,7 +2444,7 @@ button.swiper-pagination-bullet {
     font-size: 1.5rem
   }
   .popup__text p {
-    margin-bottom: 1.875rem
+    margin-bottom: .625rem
   }
   .spollers__title {
     padding-top: 1.4375rem
@@ -2456,6 +2481,9 @@ button.swiper-pagination-bullet {
   }
   .footer {
     padding-bottom: .9375rem
+  }
+  .hero {
+    padding-top: .0000000625rem
   }
   .hero__left span {
     font-size: .9375rem
@@ -2558,7 +2586,7 @@ button.swiper-pagination-bullet {
     margin-bottom: 3.125rem
   }
   .instructors__slide {
-    gap: 3.5rem
+    gap: 1.875rem
   }
   .instructors__slide--right h5 {
     font-size: .875rem
@@ -2594,7 +2622,7 @@ button.swiper-pagination-bullet {
     font-size: .9375rem
   }
   .results__num {
-    font-size: 5.625rem
+    font-size: 3.75rem
   }
   .reviews {
     padding-bottom: 10.875rem
@@ -2688,7 +2716,7 @@ button.swiper-pagination-bullet {
     padding-bottom: 12.5rem
   }
   .items-category-page__items {
-    gap: 2.5rem
+    gap: 4.375rem
   }
   .items-category-page__left h2 {
     font-size: 1.5rem
@@ -2798,13 +2826,27 @@ button.swiper-pagination-bullet {
 }
 @media (max-width:47.99875em) {
   .options__item {
-    width: 100%
+    width: 100%;
+    padding: .75rem 1.875rem
   }
   .options {
-    flex-direction: column
+    flex-direction: column;
+    gap: .625rem;
+    margin-bottom: 1.25rem
   }
   .menu__body {
     max-width: 100%
+  }
+  .popup {
+    padding: 1.25rem .625rem
+  }
+  .popup__content {
+    padding-top: 1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem
+  }
+  .popup__text h2 {
+    padding-right: 1.25rem
   }
   .form__box {
     grid-template-columns: auto
@@ -2868,6 +2910,9 @@ button.swiper-pagination-bullet {
   .about__items {
     grid-template-columns: auto
   }
+  .about__item p {
+    line-height: 1.3125rem
+  }
   .skills__box {
     border: none;
     padding: 0
@@ -2905,12 +2950,19 @@ button.swiper-pagination-bullet {
   .skills__items :nth-child(10) {
     order: 8
   }
+  .skills__text p {
+    line-height: 1.3125rem
+  }
+  .structure__text {
+    line-height: 1.3125rem
+  }
   .instructors__slide {
     grid-template-columns: auto
   }
   .instructors__slide--left {
-    max-width: 75%;
-    justify-self: center
+    max-width: 80%;
+    justify-self: center;
+    margin-left: 0
   }
   .instructors__slide--right h4 {
     font-size: 2.625rem;
@@ -2919,8 +2971,17 @@ button.swiper-pagination-bullet {
   .instructors__slide--right {
     max-width: 100%
   }
+  .instructors__slide--text {
+    line-height: 1.3125rem
+  }
   .results__item h6 {
     margin-bottom: 1.25rem
+  }
+  .results__item p {
+    line-height: 1.3125rem
+  }
+  .reviews__slide--text {
+    line-height: 1.3125rem
   }
   .price__top h2::before {
     content: "";
@@ -2930,6 +2991,9 @@ button.swiper-pagination-bullet {
     width: 100%;
     height: .0625rem;
     background: #000
+  }
+  .price__item ul li {
+    line-height: 1.125rem
   }
   .price__item ul {
     margin-bottom: 5rem
@@ -2942,6 +3006,9 @@ button.swiper-pagination-bullet {
   }
   .about-blog-page {
     padding-top: 2.5rem
+  }
+  .article-article-page__container-small p {
+    line-height: 120%
   }
   .items-category-page__item {
     flex-direction: column-reverse
@@ -2967,11 +3034,6 @@ button.swiper-pagination-bullet {
   }
   .article-article-page__right a {
     margin-bottom: 1.25rem
-  }
-}
-@media (max-width:31.25em) {
-  .instructors__slide--left {
-    max-width: 100%
   }
 }
 @media (min-width:48em)and (max-width:90em) {
@@ -3019,16 +3081,16 @@ button.swiper-pagination-bullet {
     font-size: clamp(1.5rem ,1.2906976744rem + 1.0465116279vw ,2.0625rem)
   }
   .popup__text p {
-    margin-bottom: clamp(1.875rem ,1.4098837209rem + 2.3255813953vw ,3.125rem)
+    margin-bottom: clamp(.625rem ,-.3052325581rem + 4.6511627907vw ,3.125rem)
   }
   .spollers__title {
-    padding-top: clamp(1.4375rem ,.925872093rem + 2.5581395349vw ,2.8125rem)
+    padding-top: clamp(1.4375rem ,1.0421511628rem + 1.976744186vw ,2.5rem)
   }
   .spollers__title {
-    padding-bottom: clamp(1.4375rem ,.925872093rem + 2.5581395349vw ,2.8125rem)
+    padding-bottom: clamp(1.4375rem ,1.0421511628rem + 1.976744186vw ,2.5rem)
   }
   .spollers__title {
-    font-size: clamp(1.125rem ,.8924418605rem + 1.1627906977vw ,1.75rem)
+    font-size: clamp(1.125rem ,.9389534884rem + .9302325581vw ,1.625rem)
   }
   .spollers__body {
     padding-bottom: clamp(1.4375rem ,.925872093rem + 2.5581395349vw ,2.8125rem)
@@ -3057,6 +3119,9 @@ button.swiper-pagination-bullet {
   .footer {
     padding-bottom: clamp(.9375rem ,.2398255814rem + 3.488372093vw ,2.8125rem)
   }
+  .hero {
+    padding-top: clamp(.0000000625rem ,-.4651161933rem + 2.3255812791vw ,1.25rem)
+  }
   .hero__left span {
     font-size: clamp(.9375rem ,.914244186rem + .1162790698vw ,1rem)
   }
@@ -3081,13 +3146,13 @@ button.swiper-pagination-bullet {
     max-width: clamp(13.4375rem ,11.1816860465rem + 11.2790697674vw ,19.5rem)
   }
   .about {
-    padding-top: clamp(1.875rem ,1.1773255814rem + 3.488372093vw ,3.75rem)
+    padding-top: clamp(1.875rem ,.7122093023rem + 5.8139534884vw ,5rem)
   }
   .about {
     padding-bottom: clamp(7.5rem ,5.8720930233rem + 8.1395348837vw ,11.875rem)
   }
   .about__container {
-    gap: clamp(1.5625rem ,-.1816860465rem + 8.7209302326vw ,6.25rem)
+    gap: clamp(1.5625rem ,.5159883721rem + 5.2325581395vw ,4.375rem)
   }
   .about__item h4 {
     font-size: clamp(1.125rem ,.8924418605rem + 1.1627906977vw ,1.75rem)
@@ -3102,7 +3167,7 @@ button.swiper-pagination-bullet {
     padding-bottom: clamp(8.4375rem ,6.6933139535rem + 8.7209302326vw ,13.125rem)
   }
   .skills__container {
-    gap: clamp(2.5rem ,1.4069767442rem + 5.4651162791vw ,5.4375rem)
+    gap: clamp(2.5rem ,1.8023255814rem + 3.488372093vw ,4.375rem)
   }
   .skills__items {
     -webkit-column-gap: clamp(.5rem ,.4534883721rem + .2325581395vw ,.625rem);
@@ -3140,7 +3205,7 @@ button.swiper-pagination-bullet {
     font-size: clamp(.9375rem ,.8677325581rem + .3488372093vw ,1.125rem)
   }
   .structure__text {
-    margin-bottom: clamp(3.3125rem ,2.0566860465rem + 6.2790697674vw ,6.6875rem)
+    margin-bottom: clamp(3.3125rem ,2.9171511628rem + 1.976744186vw ,4.375rem)
   }
   .structure__spollers {
     margin-bottom: clamp(2.5rem ,1.9651162791rem + 2.6744186047vw ,3.9375rem)
@@ -3152,13 +3217,13 @@ button.swiper-pagination-bullet {
     padding-bottom: clamp(8.125rem ,4.8691860465rem + 16.2790697674vw ,16.875rem)
   }
   .instructors__top {
-    margin-bottom: clamp(2.1875rem ,.675872093rem + 7.5581395349vw ,6.25rem)
+    margin-bottom: clamp(2.1875rem ,1.3735465116rem + 4.0697674419vw ,4.375rem)
   }
   .instructors__slider {
     margin-bottom: clamp(3.125rem ,1.613372093rem + 7.5581395349vw ,7.1875rem)
   }
   .instructors__slide {
-    gap: clamp(3.5rem ,2.5465116279rem + 4.7674418605vw ,6.0625rem)
+    gap: clamp(1.875rem ,.3168604651rem + 7.7906976744vw ,6.0625rem)
   }
   .instructors__slide--right h5 {
     font-size: clamp(.875rem ,.7354651163rem + .6976744186vw ,1.25rem)
@@ -3194,7 +3259,7 @@ button.swiper-pagination-bullet {
     font-size: clamp(.9375rem ,.914244186rem + .1162790698vw ,1rem)
   }
   .results__num {
-    font-size: clamp(5.625rem ,4.2296511628rem + 6.976744186vw ,9.375rem)
+    font-size: clamp(3.75rem ,2.4709302326rem + 6.3953488372vw ,7.1875rem)
   }
   .reviews {
     padding-bottom: clamp(10.875rem ,9.5726744186rem + 6.511627907vw ,14.375rem)
@@ -3288,7 +3353,7 @@ button.swiper-pagination-bullet {
     padding-bottom: clamp(12.5rem ,6.9186046512rem + 27.9069767442vw ,27.5rem)
   }
   .items-category-page__items {
-    gap: clamp(2.5rem ,.8720930233rem + 8.1395348837vw ,6.875rem)
+    gap: clamp(4.375rem ,2.9796511628rem + 6.976744186vw ,8.125rem)
   }
   .items-category-page__left h2 {
     font-size: clamp(1.5rem ,1.1511627907rem + 1.7441860465vw ,2.4375rem)
@@ -3315,11 +3380,14 @@ button.swiper-pagination-bullet {
   .spollers__title:hover {
     color: #fff;
     background-color: #000;
-    transition: all .3s ease 0s
+    transition: all .3s ease 0s;
+    padding-left: 1.875rem
   }
   .spollers__title:hover::after,
   .spollers__title:hover::before {
-    background-color: #fff
+    background-color: #fff;
+    right: 30px;
+    transition: all .3s ease 0s
   }
   .button--border:hover {
     background-color: #000;
