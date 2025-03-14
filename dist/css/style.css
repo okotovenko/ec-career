@@ -1112,7 +1112,8 @@ body::after {
   border: 2px solid #000;
   border-radius: 2.8125rem;
   padding: .75rem 1.25rem .9375rem 1.25rem;
-  transition: all .3s ease 0s
+  transition: all .3s ease 0s;
+  white-space: nowrap
 }
 .about-blog-page__container {
   display: flex;
@@ -3001,9 +3002,13 @@ button.swiper-pagination-bullet {
   .price__item {
     padding-bottom: 2.8125rem
   }
+  .categories-blog-page__items {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start
+  }
   .categories-blog-page {
-    padding-top: 0;
-    display: none
+    padding-top: 0
   }
   .about-blog-page {
     padding-top: 2.5rem
