@@ -389,6 +389,22 @@ body::after {
   color: #fff;
   box-shadow: 0 12px 17px 0 rgba(250,178,11,.43)
 }
+.form__box :nth-child(1).form-label {
+  grid-area: 1/1/2/2
+}
+.form__box :nth-child(2).form-label {
+  grid-area: 1/2/2/3
+}
+.form__box :nth-child(3).form-label {
+  grid-area: 2/1/3/2
+}
+.form__box>span {
+  grid-area: 3/1/4/2
+}
+.form__box>button[type=submit],
+.form__box>input[type=submit] {
+  grid-area: 3/2/4/3
+}
 .form-label {
   width: 100%;
   max-width: 19.375rem;
@@ -847,7 +863,6 @@ body::after {
 }
 .instructors__slide--right h4 {
   font-weight: 800;
-  font-size: 1.875rem;
   margin-bottom: .375rem
 }
 .instructors__slide--right h5 {
@@ -1054,7 +1069,6 @@ body::after {
   font-size: 1.125rem;
   text-align: center;
   color: #fab20b;
-  white-space: nowrap;
   margin-bottom: 2.8125rem
 }
 .price__item ul {
@@ -2255,6 +2269,9 @@ button.swiper-pagination-bullet {
   .instructors__slide {
     gap: 6.0625rem
   }
+  .instructors__slide--right h4 {
+    font-size: 1.875rem
+  }
   .instructors__slide--right h5 {
     font-size: 1.25rem
   }
@@ -2289,7 +2306,7 @@ button.swiper-pagination-bullet {
     font-size: 1rem
   }
   .results__num {
-    font-size: 7.1875rem
+    font-size: 5rem
   }
   .reviews {
     padding-bottom: 14.375rem
@@ -2307,7 +2324,7 @@ button.swiper-pagination-bullet {
     padding-bottom: 3.8125rem
   }
   .reviews__slide {
-    padding-left: 4.4375rem
+    padding-left: 3.125rem
   }
   .reviews__slide {
     padding-right: 3.125rem
@@ -2335,6 +2352,9 @@ button.swiper-pagination-bullet {
   }
   .price__item {
     padding-right: 1.875rem
+  }
+  .categories-blog-page {
+    padding-top: 3.75rem
   }
   .categories-blog-page {
     padding-bottom: 5rem
@@ -2419,9 +2439,6 @@ button.swiper-pagination-bullet {
     -moz-column-gap: 6.0625rem;
     column-gap: 6.0625rem
   }
-  .categories-blog-page {
-    padding-top: 3.75rem
-  }
 }
 @media (max-width:25em) {
   .header__button {
@@ -2429,6 +2446,9 @@ button.swiper-pagination-bullet {
   }
   .footer__left a span {
     display: block
+  }
+  .price__center a {
+    font-size: 1.5rem
   }
 }
 @media (max-width:20em) {
@@ -2589,6 +2609,9 @@ button.swiper-pagination-bullet {
   .instructors__slide {
     gap: 1.875rem
   }
+  .instructors__slide--right h4 {
+    font-size: 1.25rem
+  }
   .instructors__slide--right h5 {
     font-size: .875rem
   }
@@ -2623,7 +2646,7 @@ button.swiper-pagination-bullet {
     font-size: .9375rem
   }
   .results__num {
-    font-size: 3.75rem
+    font-size: 2.8125rem
   }
   .reviews {
     padding-bottom: 10.875rem
@@ -2669,6 +2692,9 @@ button.swiper-pagination-bullet {
   }
   .price__item {
     padding-right: 1.5625rem
+  }
+  .categories-blog-page {
+    padding-top: 2.5rem
   }
   .categories-blog-page {
     padding-bottom: 3.125rem
@@ -2849,20 +2875,30 @@ button.swiper-pagination-bullet {
   .popup__text h2 {
     padding-right: 1.25rem
   }
+  .popup__text p {
+    font-size: 1rem
+  }
+  .form__box :nth-child(1).form-label {
+    grid-area: auto
+  }
+  .form__box :nth-child(2).form-label {
+    grid-area: auto
+  }
+  .form__box :nth-child(3).form-label {
+    grid-area: auto
+  }
+  .form__box>span {
+    grid-area: auto
+  }
+  .form__box>button[type=submit],
+  .form__box>input[type=submit] {
+    grid-area: auto
+  }
   .form__box {
     grid-template-columns: auto
   }
   .form-label {
     max-width: 100%
-  }
-  .blog-page__categories {
-    order: 2
-  }
-  .blog-page__about {
-    order: 1
-  }
-  .blog-page__articles {
-    order: 3
   }
   .top {
     grid-template-columns: auto
@@ -2966,7 +3002,6 @@ button.swiper-pagination-bullet {
     margin-left: 0
   }
   .instructors__slide--right h4 {
-    font-size: 2.625rem;
     margin-bottom: 1.125rem
   }
   .instructors__slide--right {
@@ -2993,6 +3028,12 @@ button.swiper-pagination-bullet {
     height: .0625rem;
     background: #000
   }
+  .price__center {
+    grid-template-columns: auto
+  }
+  .price__items {
+    grid-template-columns: auto
+  }
   .price__item ul li {
     line-height: 1.125rem
   }
@@ -3007,11 +3048,11 @@ button.swiper-pagination-bullet {
     overflow-x: auto;
     justify-content: flex-start
   }
-  .categories-blog-page {
-    padding-top: 0
-  }
   .about-blog-page {
     padding-top: 2.5rem
+  }
+  .articles-blog-page__items {
+    grid-template-columns: auto
   }
   .article-article-page__container-small p {
     line-height: 120%
@@ -3068,9 +3109,6 @@ button.swiper-pagination-bullet {
     -webkit-column-gap: clamp(3.125rem ,-.2321428571rem + 6.994047619vw ,6.0625rem);
     -moz-column-gap: clamp(3.125rem ,-.2321428571rem + 6.994047619vw ,6.0625rem);
     column-gap: clamp(3.125rem ,-.2321428571rem + 6.994047619vw ,6.0625rem)
-  }
-  .categories-blog-page {
-    padding-top: clamp(2.5rem ,1.0714285714rem + 2.9761904762vw ,3.75rem)
   }
 }
 @media (min-width:20em)and (max-width:73.75em) {
@@ -3231,6 +3269,9 @@ button.swiper-pagination-bullet {
   .instructors__slide {
     gap: clamp(1.875rem ,.3168604651rem + 7.7906976744vw ,6.0625rem)
   }
+  .instructors__slide--right h4 {
+    font-size: clamp(1.25rem ,1.0174418605rem + 1.1627906977vw ,1.875rem)
+  }
   .instructors__slide--right h5 {
     font-size: clamp(.875rem ,.7354651163rem + .6976744186vw ,1.25rem)
   }
@@ -3265,7 +3306,7 @@ button.swiper-pagination-bullet {
     font-size: clamp(.9375rem ,.914244186rem + .1162790698vw ,1rem)
   }
   .results__num {
-    font-size: clamp(3.75rem ,2.4709302326rem + 6.3953488372vw ,7.1875rem)
+    font-size: clamp(2.8125rem ,1.9985465116rem + 4.0697674419vw ,5rem)
   }
   .reviews {
     padding-bottom: clamp(10.875rem ,9.5726744186rem + 6.511627907vw ,14.375rem)
@@ -3283,7 +3324,7 @@ button.swiper-pagination-bullet {
     padding-bottom: clamp(3.4375rem ,3.2979651163rem + .6976744186vw ,3.8125rem)
   }
   .reviews__slide {
-    padding-left: clamp(2.8125rem ,2.2078488372rem + 3.023255814vw ,4.4375rem)
+    padding-left: clamp(2.8125rem ,2.6962209302rem + .5813953488vw ,3.125rem)
   }
   .reviews__slide {
     padding-right: clamp(1.5rem ,.8953488372rem + 3.023255814vw ,3.125rem)
@@ -3311,6 +3352,9 @@ button.swiper-pagination-bullet {
   }
   .price__item {
     padding-right: clamp(1.5625rem ,1.4462209302rem + .5813953488vw ,1.875rem)
+  }
+  .categories-blog-page {
+    padding-top: clamp(2.5rem ,2.0348837209rem + 2.3255813953vw ,3.75rem)
   }
   .categories-blog-page {
     padding-bottom: clamp(3.125rem ,2.4273255814rem + 3.488372093vw ,5rem)
@@ -3484,5 +3528,16 @@ button.swiper-pagination-bullet {
   }
   .items-category-page__left a:hover {
     cursor: pointer
+  }
+}
+@media (hover:none) {
+  .spollers__title:hover {
+    background: rgba(0,0,0,0);
+    color: #000;
+    padding-left: 0
+  }
+  .spollers__title:hover::after,
+  .spollers__title:hover::before {
+    background-color: #000
   }
 }

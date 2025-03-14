@@ -4026,7 +4026,7 @@
             modules: [ Navigation ],
             observer: true,
             observeParents: true,
-            slidesPerView: 2.2,
+            slidesPerView: 2.4,
             spaceBetween: 0,
             speed: 800,
             navigation: {
@@ -4043,7 +4043,7 @@
                     spaceBetween: 20
                 },
                 992: {
-                    slidesPerView: 2.2,
+                    slidesPerView: 2.4,
                     spaceBetween: 20
                 }
             },
